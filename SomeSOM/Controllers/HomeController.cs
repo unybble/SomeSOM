@@ -13,7 +13,7 @@ namespace SomeSOM.Controllers
         public IActionResult Index()
         {
 
-            Map map = new Map(5, 5);
+            Map map = new Map(25);
             map.InitializeNodeWeights();
             HomeViewModel model = new HomeViewModel(map);
             
