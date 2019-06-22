@@ -3,11 +3,11 @@ namespace SomeSOM.Models
 {
     public class HomeViewModel
     {
-        public Map Map;
+        public SOM Som;
 
-        public HomeViewModel(Map map)
+        public HomeViewModel(SOM som)
         {
-            Map = map;
+            Som = som;
         }
     }
 }

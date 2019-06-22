@@ -12,15 +12,19 @@ namespace SomeSOM.Controllers
     {
         public IActionResult Index()
         {
-
             Map map = new Map(25);
-            map.InitializeNodeWeights();
-            HomeViewModel model = new HomeViewModel(map);
-            
+            SOM som = new SOM(map, 20);
 
+            map.InitializeNodeWeights();
+            HomeViewModel model = new HomeViewModel(som);
             return View(model);
         }
 
-       
+        [HttpPost]
+        public ActionResult Iterate(SOM som)
+        {
+            som.Map.Grid[0,0] = new SOMColor(0, 0, 0);
+            return View(som);
+        }
     }
 }

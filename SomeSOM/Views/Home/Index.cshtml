@@ -4,11 +4,26 @@
 
 @model HomeViewModel;
 
-@for (int i = 0; i < Model.Map.Dimension; i++)
+
+<div id="app">
+    <v-app>
+        <v-content>
+            <v-container>Hello world</v-container>
+        </v-content>
+    </v-app>
+</div>
+
+
+@using (Html.BeginForm("Iterate", "Home"))
+{
+    <input type="submit" value="Iterate" />
+}
+
+@for (int i = 0; i < Model.Som.Map.Dimension; i++)
 {
     <br />
-    for (int j = 0; j < Model.Map.Dimension; j++)
+    for (int j = 0; j < Model.Som.Map.Dimension; j++)
     {
-        <div style="display:inline-block;padding:10px;background-color:@Model.Map.Grid[i,j].Hex"></div>
+        <div style="display:inline-block;padding:10px;background-color:@Model.Som.Map.Grid[i,j].Hex"></div>
     }
 }
